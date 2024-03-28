@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 const useTimer = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+    const [currentDate, setCurrentDate] = useState(new Date());
 
-  useEffect(() => {
-    const timerID = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000);
+    useEffect(() => {
+        const timerID = setInterval(() => {
+            setCurrentDate(new Date());
+        }, 1000);
 
-    return () => clearInterval(timerID);
-  }, []);
+        return() => clearInterval(timerID);
+    }, []);
 
-  return currentDate;
+    return currentDate;
 };
 
 export default useTimer;
